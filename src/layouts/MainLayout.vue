@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="glossy">
       <q-toolbar>
         <q-btn
           flat
@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Timon Dubreuil : Portfolio
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>2025</div>
       </q-toolbar>
     </q-header>
 
@@ -23,80 +23,80 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
+      style="
+      display: flex;
+      flex-direction: column;
+      "
+      width="350"
     >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
 
-        <EssentialLink
-          v-for="link in linksList"
+    <q-timeline layout="dense" style="padding-left: 10px; padding-right: 10px;" class="text-accent" color="accent">
+        <NavigationItem
+          v-for="link in timelineSections"
           :key="link.title"
           v-bind="link"
         />
-      </q-list>
+      </q-timeline>
+      <!-- <q-space></q-space>
+      <q-list
+        show-if-above
+        bordered
+        class="text-primary">
+      <InfoItem value="+33 7 69 24 14 29" copiedValue="+33769241429" icon="telephone" name="telephone"></InfoItem>
+      </q-list> -->
     </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+
+      <q-footer elevated>
+        <q-toolbar class="glossy">
+          <q-toolbar-title>Footer</q-toolbar-title>
+        </q-toolbar>
+      </q-footer>
   </q-layout>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+<script>
+import NavigationItem from 'components/NavigationItem.vue'
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+export default {
+  name: 'MainLayout',
+  components: {
+    NavigationItem
   },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+  data() {
+    return {
+      leftDrawerOpen: false,
+      timelineSections: [
+        {
+          title: 'Stage : H2SYS - IHM du système Mothys',
+          caption: 'janvier 2025 - mai 2025',
+          icon: 'bubble_chart',
+          link: '/'
+        },
+        {
+          title: "SAE : S5S6 - boîtier de surveillance qualité de l'eau",
+          caption: 'janvier 2025 - mai 2025',
+          icon: 'bubble_chart',
+          link: '/'
+        },
+      ],
+      infoSections: [
+        {
+          title:"telephone",
+          icon:"telephone",
+          value:"+33 7 69 24 14 29",
+          copiedValue:"+33769241429"
+        }
+      ]
+    }
   },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+  methods: {
+    toggleLeftDrawer() {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+    }
   }
-]
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
 }
 </script>
