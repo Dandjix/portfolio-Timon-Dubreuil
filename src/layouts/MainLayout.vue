@@ -52,7 +52,9 @@
 
       <q-footer elevated>
         <q-toolbar class="glossy">
-          <q-toolbar-title>Footer</q-toolbar-title>
+          <InfoItem v-for="item in infoSections" :key="item.title" :title="item.title" :value="item.value" :copiedValue="item.copiedValue" :icon="item.icon" :name="item.name">
+
+          </InfoItem>
         </q-toolbar>
       </q-footer>
   </q-layout>
@@ -60,11 +62,13 @@
 
 <script>
 import NavigationItem from 'components/NavigationItem.vue'
+import InfoItem from 'components/InfoItem.vue';
 
 export default {
   name: 'MainLayout',
   components: {
-    NavigationItem
+    NavigationItem,
+    InfoItem
   },
   data() {
     return {
@@ -86,9 +90,24 @@ export default {
       infoSections: [
         {
           title:"telephone",
-          icon:"telephone",
+          icon:"phone",
           value:"+33 7 69 24 14 29",
-          copiedValue:"+33769241429"
+          copiedValue:"+33769241429",
+          name:"phone number"
+        },
+        {
+          title:"email",
+          icon:"email",
+          value:"timondubreuil@outlook.com",
+          copiedValue:"timondubreuil@outlook.com",
+          name:"email address"
+        },
+        {
+          title:"github",
+          icon:"fa-brands fa-github",
+          value:"https://github.com/Dandjix",
+          copiedValue:"https://github.com/Dandjix",
+          name:"github"
         }
       ]
     }

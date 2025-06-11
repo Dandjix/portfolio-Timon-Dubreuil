@@ -1,11 +1,10 @@
 <template>
-  <q-item clickable>
-
-    {{ value }}
-
-    <q-item-section avatar @click="copyToClipboard">
-      <q-icon :name="icon" />
-    </q-item-section>
+  <q-item clickable style="width: fit-content;" @click="copyToClipboard()">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <q-icon :name="icon" class="q-pr-sm" />
+      
+      <span>{{ value }}</span>
+    </div>
   </q-item>
 </template>
 
@@ -21,7 +20,7 @@ export default {
     copyToClipboard() {
       navigator.clipboard.writeText(this.copiedValue).then(() => {
         this.$q.notify({
-          message: 'Copied to clipboard!',
+          message: `Copied ${this.name} to clipboard!`,
           color: 'green',
         });
       });
