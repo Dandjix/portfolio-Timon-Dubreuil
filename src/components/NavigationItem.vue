@@ -4,11 +4,11 @@
       clickable
       @click="navigate"
       class="q-pa-sm rounded-borders cursor-pointer"
-      color="accent"
+      color="primary"
       v-ripple
     >
       <q-item-section avatar>
-        <q-icon :name="icon" color="accent" />
+        <q-icon :name="icon" color="primary" />
       </q-item-section>
 
       <q-item-section>

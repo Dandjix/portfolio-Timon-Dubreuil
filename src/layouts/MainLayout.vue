@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy">
+    <q-header elevated>
       <q-toolbar>
         <q-btn
           flat
@@ -30,7 +30,7 @@
       width="350"
     >
 
-    <q-timeline layout="dense" style="padding-left: 10px; padding-right: 10px;" class="text-accent" color="accent">
+    <q-timeline layout="dense" style="padding-left: 10px; padding-right: 10px;" class="text-primary" color="primary">
         <NavigationItem
           v-for="link in timelineSections"
           :key="link.title"
@@ -51,7 +51,7 @@
     </q-page-container>
 
       <q-footer elevated>
-        <q-toolbar class="glossy">
+        <q-toolbar>
           <InfoItem v-for="item in infoSections" :key="item.title" :title="item.title" :value="item.value" :copiedValue="item.copiedValue" :icon="item.icon" :name="item.name">
 
           </InfoItem>
