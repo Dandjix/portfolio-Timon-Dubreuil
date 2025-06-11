@@ -30,6 +30,7 @@
       width="350"
     >
 
+
     <q-timeline layout="dense" style="padding-left: 10px; padding-right: 10px;" class="text-primary" color="primary">
         <NavigationItem
           v-for="link in timelineSections"
