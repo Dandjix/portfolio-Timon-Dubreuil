@@ -56,7 +56,7 @@
 
 
                 <img src="/images/stageS6/produitsEntreprise.png" alt="Produits de l'entreprise"
-                    class="col-12 col-md-6 bigImg" />
+                    class="col-12 col-md-6 bigImg" style="height: 100%;" />
             </div>
         </SectionCard>
 
@@ -64,7 +64,7 @@
             <h2>Sujet du stage</h2>
             <div class="row">
                 <img src="/images/stageS6/systèmeMothysSchema.png" alt="Schéma des composants du système Mothys"
-                    class="col-12 col-md-6 bigImg" />
+                    class="col-12 col-md-6 bigImg" style="height: 100%;" />
 
                 <div class="col-12 col-md-6">
                     <p class="mb-4">
@@ -323,40 +323,47 @@
             <q-separator></q-separator>
 
             <h3>Graphiques en temps réel</h3>
+            <div class="row">
 
-            <p class="mb-4">
-                L’ancienne IHM ne permettait d’afficher qu’un seul graphique à la fois, basé sur un fichier
-                journal. Les
-                interactions étaient limitées, et aucun affichage en direct n’était possible.
-                Pour répondre au besoin du client, j’ai conçu un système de <strong>graphique en temps
-                    réel</strong>
-                intégré à l’IHM, en utilisant la bibliothèque <strong>Apache ECharts</strong>.
-            </p>
+                <div class="col-12 col-md-6">
+                    <p class="mb-4">
+                        L’ancienne IHM ne permettait d’afficher qu’un seul graphique à la fois, basé sur un fichier
+                        journal. Les
+                        interactions étaient limitées, et aucun affichage en direct n’était possible.
+                        Pour répondre au besoin du client, j’ai conçu un système de <strong>graphique en temps
+                            réel</strong>
+                        intégré à l’IHM, en utilisant la bibliothèque <strong>Apache ECharts</strong>.
+                    </p>
 
-            <p class="mb-4">
-                Les données du système Mothys sont reçues en direct via le <strong>bus CAN</strong>, puis
-                traitées dans
-                le backend pour être diffusées en temps réel au frontend via des WebSockets.
-                Les graphiques se mettent à jour dynamiquement avec une fréquence configurable.
-            </p>
+                    <p class="mb-4">
+                        Les données du système Mothys sont reçues en direct via le <strong>bus CAN</strong>, puis
+                        traitées dans
+                        le backend pour être diffusées en temps réel au frontend via des WebSockets.
+                        Les graphiques se mettent à jour dynamiquement avec une fréquence configurable.
+                    </p>
 
-            <p class="mb-4">
-                Les utilisateurs peuvent visualiser simultanément jusqu’à <strong>quatre fenêtres de
-                    graphiques</strong>, chacune pouvant contenir plusieurs courbes superposées.
-                Les graphiques sont interactifs : zoom, survol, légende dynamique, affichage de valeurs.
-            </p>
+                    <p class="mb-4">
+                        Les utilisateurs peuvent visualiser simultanément jusqu’à <strong>quatre fenêtres de
+                            graphiques</strong>, chacune pouvant contenir plusieurs courbes superposées.
+                        Les graphiques sont interactifs : zoom, survol, légende dynamique, affichage de valeurs.
+                    </p>
 
-            <ul class="list-disc pl-6 mb-4 text-sm">
-                <li>Les courbes sont sélectionnables par composant (batterie, pile, DCDC, etc.)</li>
-                <li>Les données affichées peuvent être <strong>exportées</strong> en image ou en <strong>CSV
-                        interprété</strong></li>
-                <li>Certains affichages avancés sont <strong>verrouillés via le système de licence</strong></li>
-                <li>Les performances ont été optimisées pour que les graphes restent fluides même sur
-                    <strong>Raspberry
-                        Pi 5</strong>
-                </li>
-            </ul>
+                    <ul class="list-disc pl-6 mb-4 text-sm">
+                        <li>Les courbes sont sélectionnables par composant (batterie, pile, DCDC, etc.)</li>
+                        <li>Les données affichées peuvent être <strong>exportées</strong> en image ou en <strong>CSV
+                                interprété</strong></li>
+                        <li>Certains affichages avancés sont <strong>verrouillés via le système de licence</strong></li>
+                        <li>Les performances ont été optimisées pour que les graphes restent fluides même sur
+                            <strong>Raspberry
+                                Pi 5</strong>
+                        </li>
+                    </ul>
 
+
+                </div>
+                <img src="images/stageS6/pageGraphiquesAprès.png" alt="Page des graphiques finale"
+                    class="col-12 col-md-6" style="height: 100%;">
+            </div>
             <p>
                 Cette partie m’a permis de manipuler des flux de données en temps réel, d’optimiser le rendu
                 graphique
@@ -438,7 +445,7 @@
                     </ul>
                 </div>
                 <img src="/images/stageS6/testsATEX.png" alt="Tests en atmosphère explosive"
-                    class="col-12 col-md-6 bigImg" />
+                    class="col-12 col-md-6 bigImg" style="height: 100%;" />
             </div>
             <p>
                 Ces tests ont été réalisés en collaboration avec mon maître de stage et les techniciens,
@@ -463,11 +470,8 @@
             </p>
             <ul class="list-disc pl-6 mb-4">
                 <li>Conception et développement d’une IHM complète avec <strong>NiceGUI</strong></li>
-                <li>Développement <strong>frontend</strong> (affichage, interactions, graphismes dynamiques) et
-                    <strong>backend</strong> (serveur FastAPI)
-                </li>
-                <li>Connexion au <strong>bus CAN</strong> pour afficher des données en temps réel</li>
-                <li>Ajout de fonctionnalités : <em>mode démo, gestion des utilisateurs, thème sombre, traduction,
+                <li>Connexion au <strong>bus CAN</strong> pour interagir avec les composants du système Mothys</li>
+                <li>Ajout de fonctionnalités : <em>mode démo, gestion des utilisateurs, schéma interactif, traduction,
                         etc.</em></li>
                 <li>Déploiement sur <strong>Raspberry Pi 5</strong> dans un environnement embarqué</li>
             </ul>
@@ -525,13 +529,16 @@
             </p>
         </SectionCard>
 
-        <SectionCard>
+        <SectionCard max-width="750px">
             <h2>Bilan</h2>
             <p>
                 Ce stage m’a permis de renforcer mes compétences en développement web, en systèmes embarqués
                 et en gestion de projet logiciel. Il m’a également donné l’opportunité de travailler sur un produit
                 utilisé en conditions réelles.
             </p>
+            <p>J'ai réalisé un site web dans un framework que je ne connaissais pas, avec comme fonctionnalités
+                intéressantes un schéma interractif et une page de graphiques en temps réel; tout en évoluant dans une
+                PME et en me faisant une bonne idée du travail en entreprise. </p>
         </SectionCard>
     </main>
 </template>
