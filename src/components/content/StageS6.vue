@@ -19,7 +19,7 @@ import { default } from '../elements/BeforeAfter.vue';
                 </p>
 
                 <img src="/images/stageS6/produitsEntreprise.png" alt="Produits de l'entreprise"
-                    class="rounded-xl shadow-md w-full mb-6 col-12 col-md-6 q-pa-md" />
+                    class="col-12 col-md-6" />
             </div>
         </SectionCard>
 
@@ -27,7 +27,7 @@ import { default } from '../elements/BeforeAfter.vue';
             <h2>Sujet du stage</h2>
             <div class="row">
                 <img src="/images/stageS6/systèmeMothysSchema.png" alt="Schéma des composants du système Mothys"
-                    class="rounded-xl shadow-md w-full mb-6 col-12 col-md-6 q-pa-md" />
+                    class="col-12 col-md-6" />
 
                 <div class="col-12 col-md-6">
                     <p class="mb-4">
@@ -135,6 +135,45 @@ import { default } from '../elements/BeforeAfter.vue';
         <SectionCard>
             <h2>Réalisation</h2>
 
+            <h3>Structure de l'application</h3>
+
+            <p class="mb-4">
+                Afin de structurer proprement le code de l’IHM et de garantir la clarté et la maintenabilité du projet,
+                j’ai fait le choix d’une <strong>approche orientée objet</strong> pour organiser les données et les
+                fonctionnalités métier.
+            </p>
+
+            <p class="mb-4">
+                Les différentes parties de l’application, comme la gestion du <strong>bus CAN</strong>, des
+                <strong>logs</strong>, des <strong>utilisateurs</strong> ou encore des <strong>licences</strong>, sont
+                chacune encapsulées dans des <strong>services Python</strong> dédiés.
+                Ces services contiennent la logique métier, les données observables, ainsi que les fonctions de
+                traitement.
+            </p>
+
+            <p class="mb-4">
+                Pour éviter d’avoir à <strong>passer explicitement les instances de services</strong> à chaque
+                constructeur de page ou de composant dans NiceGUI, j’ai utilisé un <strong>pattern Singleton</strong>
+                sur la plupart des services.
+                Cela m’a permis d’avoir un accès global contrôlé à chaque service, tout en assurant une instance unique
+                et partagée dans l’application.
+            </p>
+
+            <ul class="list-disc pl-6 mb-4 text-sm">
+                <li>Les vues (pages) peuvent accéder directement aux services sans injection complexe</li>
+                <li>Les données sont centralisées et mises à jour automatiquement sur tous les composants qui y sont
+                    liés</li>
+                <li>Le code est plus lisible et les responsabilités de chaque classe sont clairement définies</li>
+                <li>La logique métier reste découplée de l’affichage NiceGUI</li>
+            </ul>
+
+            <p>
+                Cette organisation m’a permis d’appliquer de bonnes pratiques de développement logiciel en Python, tout
+                en m’adaptant aux contraintes spécifiques de NiceGUI, qui ne propose pas de système d’injection de
+                dépendances comme dans certains frameworks.
+            </p>
+
+            <q-separator></q-separator>
             <h3>Schéma interactif</h3>
             <p class="mb-4">
                 Le schéma électrique interactif est un élément central de l'IHM du Mothys, permettant de visualiser en
@@ -245,6 +284,49 @@ import { default } from '../elements/BeforeAfter.vue';
                 traduction
                 est conçue pour être facile à maintenir par l’équipe H2SYS.
             </p>
+
+            <q-separator></q-separator>
+            <h3>Tests</h3>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <p class="mb-4">
+                        L'application n'a pas été testée via des outils automatisés (tests unitaires ou d'intégration).
+                        À la
+                        place, nous avons réalisé des <strong>tests manuels complets</strong> sur le banc Mothys, en
+                        environnement réel, afin de valider l'ensemble des fonctionnalités de l'IHM.
+                    </p>
+
+
+                    <p class="mb-4">
+                        L’un des moments les plus critiques du stage a été la <strong>phase de test en atmosphère
+                            explosive</strong>, réalisée avec une pile à combustible alimentée en
+                        <strong>hydrogène</strong>.
+                        Dans ce contexte, l’application devait garantir la fiabilité de l’affichage, l’absence de bugs
+                        bloquants, le mécanisme de demande de puissance à la pile.
+                    </p>
+
+
+
+                    <p class="mb-4">
+                        Chaque fonction de l’IHM a été testée à la main :
+                    </p>
+
+                    <ul class="list-disc pl-6 mb-4 text-sm">
+                        <li>Activation et supervision du schéma interactif</li>
+                        <li>Visualisation en direct des trames CAN</li>
+                        <li>Affichage et rafraîchissement des graphiques en temps réel</li>
+                        <li>Tests de changement de langue, de mode sombre, et de permissions utilisateur</li>
+                        <li>Tests de la mise à jour logicielle et de la persistance des données après redémarrage</li>
+                        <li>Vérification du comportement des pages restreintes par la licence</li>
+                    </ul>
+                </div>
+                <img src="/images/stageS6/testsATEX.png" alt="Tests en atmosphère explosive" class="col-12 col-md-6" />
+            </div>
+            <p>
+                Ces tests ont été réalisés en collaboration avec mon maître de stage et les techniciens, directement sur
+                le matériel final. Ce processus m’a permis d’aborder les enjeux de sûreté, de précision et de robustesse
+                dans un contexte industriel réel.
+            </p>
         </SectionCard>
 
 
@@ -342,6 +424,11 @@ export default {
 main {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+}
+
+img {
+    padding: 0.2rem;
+    border-radius: 20px;
 }
 
 h1,
