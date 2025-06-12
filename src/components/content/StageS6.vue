@@ -132,6 +132,35 @@ import { default } from '../elements/BeforeAfter.vue';
             </p>
         </section>
 
+        <section class="mb-10">
+            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Traduction multilingue</h2>
+            <p class="mb-4">
+                L’IHM devait être utilisable dans différents contextes pédagogiques à l’international. Une
+                fonctionnalité de <strong>traduction multilingue</strong> a donc été implémentée afin de rendre
+                l’application accessible à un plus large public.
+            </p>
+
+            <p class="mb-4">
+                Quatre langues sont actuellement prises en charge : <strong>français</strong>, <strong>anglais</strong>,
+                <strong>allemand</strong> et <strong>espagnol</strong>. L’utilisateur peut changer la langue directement
+                depuis l’onglet <em>paramètres</em> de l’IHM.
+            </p>
+
+            <ul class="list-disc pl-6 mb-4 text-sm">
+                <li>Structure centralisée des chaînes de caractères dans des fichiers de traduction</li>
+                <li>Utilisation d’un système de clés pour rendre l’application facilement extensible</li>
+                <li>Création de programmes de vérification et modification des fichiers de traduction pour assurer
+                    l'intégrité des différents dictionnaires de traduction</li>
+            </ul>
+
+            <p>
+                Cette mise en place m’a amené à structurer proprement les composants et à anticiper les évolutions
+                futures, notamment l’ajout potentiel d’autres langues ou de nouveaux contenus à traduire. La traduction
+                est conçue pour être facile à maintenir par l’équipe H2SYS.
+            </p>
+        </section>
+
+
 
         <section class="mb-10">
             <h2 class="text-xl font-semibold mb-2 text-indigo-600">Réaliser un développement d’application</h2>
