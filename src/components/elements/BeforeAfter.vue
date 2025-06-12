@@ -15,12 +15,6 @@ import { default } from '../../layouts/MainLayout.vue';
     </div>
 </template>
 
-<style scoped>
-img {
-    border-radius: 12px;
-}
-</style>
-
 <script>
 export default {
     props: {

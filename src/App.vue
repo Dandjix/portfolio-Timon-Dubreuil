@@ -2,17 +2,21 @@
   <router-view />
 </template>
 
-<script setup>
+<script>
 import { Dark } from 'quasar'
 
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  Dark.set(true)
-} else {
-  Dark.set(false)
-}
+export default {
+  mounted() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      Dark.set(true)
+    } else {
+      Dark.set(false)
+    }
 
-// Optional: Listen for changes in preference
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  Dark.set(e.matches)
-})
+    // Listen for changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      Dark.set(e.matches)
+    })
+  }
+}
 </script>
