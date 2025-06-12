@@ -1,8 +1,7 @@
 import { default } from '../../layouts/MainLayout.vue';
 <template>
-    <div class="row items-center">
-        <img :src="before" alt="Page du schéma interactif (Avant)"
-            class="rounded-xl shadow-md mb-6 col-12 col-md-5 q-pa-md" />
+    <div class="row items-center q-py-md">
+        <img :src="before" alt="Page du schéma interactif (Avant)" class="col-12 col-md-5" />
 
         <div class="col-2 gt-sm flex justify-center">
             <q-icon name="arrow_forward" size="lg" />
@@ -12,10 +11,15 @@ import { default } from '../../layouts/MainLayout.vue';
             <q-icon name="arrow_downward" size="lg" />
         </div>
 
-        <img :src="after" alt="Page du schéma interactif (Après)"
-            class="rounded-xl shadow-md mb-6 col-12 col-md-5 q-pa-md" />
+        <img :src="after" alt="Page du schéma interactif (Après)" class="col-12 col-md-5" />
     </div>
 </template>
+
+<style scoped>
+img {
+    border-radius: 12px;
+}
+</style>
 
 <script>
 export default {

@@ -59,7 +59,9 @@ import { default } from '../elements/BeforeAfter.vue';
             <h2>Technologies utilisées</h2>
             <ul class="list-none pl-0 mb-4 space-y-2 text-sm">
                 <li class="flex items-center gap-2">
-                    <img src="images/stageS6/tech/nicegui.png" alt="NiceGUI" width="64px" class="q-pr-md">
+                    <img src="images/stageS6/tech/nicegui_dark.png" alt="NiceGUI" width="64px" class="q-pr-md"
+                        v-if="isDark">
+                    <img src="images/stageS6/tech/nicegui_light.png" alt="NiceGUI" width="64px" class="q-pr-md" v-else>
                     <strong>NiceGUI</strong>&nbsp; — pour le développement de l'IHM en Python
                 </li>
                 <li class="flex items-center gap-2">
@@ -108,7 +110,10 @@ import { default } from '../elements/BeforeAfter.vue';
                     <BeforeAfter before="/images/stageS6/pageSchemaAvant.jpg"
                         after="/images/stageS6/pageSchemaAprès.png" />
                 </li>
-                <li>Tableau filtré de trames CAN reçues en direct</li>
+                <li>Tableau filtré de trames CAN reçues en direct
+                    <BeforeAfter before="/images/stageS6/busViewerAvant.jpg"
+                        after="/images/stageS6/busViewerAprès.png" />
+                </li>
                 <li>Lecture des variables système triées par sous-systèmes</li>
                 <li>Visualisation et gestion des fichiers de logs CAN</li>
                 <li>Graphiques en temps réel avec export CSV/image
@@ -117,7 +122,9 @@ import { default } from '../elements/BeforeAfter.vue';
 
                 </li>
                 <li>Système de licences verrouillant certaines fonctionnalités</li>
-                <li>Page d’alertes et notifications</li>
+                <li>Page d’alertes et notifications
+                    <BeforeAfter before="/images/stageS6/alertesAvant.jpg" after="/images/stageS6/alertesAprès.png" />
+                </li>
                 <li>Dialogue manuel intégré (nouveau)</li>
                 <li>Authentification multi-rôle avec permissions différenciées</li>
                 <li>Paramètres configurables : gestion utilisateurs, langues (français, anglais, allemand, espagnol),
@@ -407,10 +414,23 @@ import { default } from '../elements/BeforeAfter.vue';
 </template>
 
 <script>
+import { Dark } from 'quasar'
 import BeforeAfter from 'src/components/elements/BeforeAfter.vue'
 import SectionCard from 'src/components/elements/SectionCard.vue'
 
 export default {
+    data() {
+        return {
+            isDark: Dark.isActive
+        }
+    },
+    mounted() {
+        // Listen to system theme changes and update isDark accordingly
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            this.isDark = e.matches
+            Dark.set(e.matches)
+        })
+    },
     components: {
         BeforeAfter,
         SectionCard
