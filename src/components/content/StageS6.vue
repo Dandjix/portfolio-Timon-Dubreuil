@@ -250,7 +250,7 @@ import { default } from '../elements/BeforeAfter.vue';
 
 
         <SectionCard>
-            <h2>Bilan des compétences</h2>
+            <h2>Compétences mobilisées</h2>
             <h3>Réaliser un développement d’application</h3>
             <p class="mb-4">
                 Durant mon stage chez <strong>H2SYS</strong>, j’ai développé une nouvelle Interface Homme-Machine (IHM)
