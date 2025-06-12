@@ -9,14 +9,45 @@ import { default } from '../elements/BeforeAfter.vue';
 
 
             <div class="row">
-                <p class="mb-4 col-12 col-md-6">
-                    J'ai effectué mon stage de 15 semaines dans l'entreprise <strong>H2SYS</strong>, une entreprise
-                    spécialisée dans
-                    le développement de solutions à hydrogène (groupes électrogènes notamment). Située à
-                    <strong>Belfort</strong>,
-                    H2SYS propose différents groupes électrogènes à hydrogène ainsi que des bancs didactiques et des
-                    piles à combustible.
-                </p>
+                <div class="mb-4 col-12 col-md-6">
+                    <p>
+                        J'ai effectué mon stage de 15 semaines dans l'entreprise <strong>H2SYS</strong>, une entreprise
+                        spécialisée dans
+                        le développement de solutions à hydrogène (groupes électrogènes notamment). Située à
+                        <strong>Belfort</strong>,
+                        H2SYS propose différents groupes électrogènes à hydrogène ainsi que des bancs didactiques et des
+                        piles à combustible.
+                    </p>
+                    <p>
+                        L'entreprise a été fondée en 2017 et comptait 9 employés. Les effectifs ont augmentés jusqu'à
+                        atteindre 30 collaborateurs en 2021, puis l'effectif a baissé pour atteindre 12 collaborateurs
+                        en 2025.
+                    </p>
+                    <p>
+                        Ce stage était particulièrement adapté pour les raisons suivantes :
+                    </p>
+                    <ul>
+                        <li>
+                            L'ancienne IHM a été développée en React Js par un collaborateur ayant quitté l'entreprise,
+                            cette personne étant la seule personne dans l'entreprise familière avec React Js.
+                        </li>
+                        <li>
+                            Yoann Powolny, mon maître de stage est occupé sur d'autres projets et n'est pas en
+                            disposition de se dédier entièrement au développement d'une nouvelle IHM.
+                        </li>
+                        <li>
+                            Il n'y a pas assez de tâches pour justifier l'emploi d'un nouveau collaborateur en CDI pour
+                            la mission du développement de l'IHM en Python NiceGUI, justifiant plutôt un stagiaire.
+                        </li>
+                    </ul>
+                    <p>
+                        La décision de l'entreprise a été faite de ne pas former les employés à une technologie web
+                        telle que React Js, optant plutôt pour NiceGUI, framework connu par certains collaborateurs
+                        de l'entreprise, que j'étais prêt à apprendre.
+                    </p>
+                </div>
+
+
 
                 <img src="/images/stageS6/produitsEntreprise.png" alt="Produits de l'entreprise"
                     class="col-12 col-md-6 bigImg" />
