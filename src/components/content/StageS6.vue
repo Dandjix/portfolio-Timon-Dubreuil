@@ -1,7 +1,7 @@
-import { default } from '../elements/BeforeAfter.vue';
 <template>
     <main class="p-8 max-w-4xl mx-auto text-gray-800 text-[15px]">
-        <h1 class="text-3xl font-bold mb-6 text-center text-indigo-700 font-serif">Mon Stage de Fin d'Études</h1>
+        <h1 class="text-center">Stage de S6 - H2SYS</h1>
+        <h4 class="text-center q-pa-none q-ma-none text-secondary"> Janvier à mai 2025</h4>
 
         <SectionCard>
             <h2>Présentation de l'entreprise</h2>
@@ -11,16 +11,20 @@ import { default } from '../elements/BeforeAfter.vue';
             <div class="row">
                 <div class="mb-4 col-12 col-md-6">
                     <p>
-                        J'ai effectué mon stage de 15 semaines dans l'entreprise <strong>H2SYS</strong>, une entreprise
+                        J'ai effectué mon stage de 15 semaines dans l'entreprise <strong>H2SYS</strong>, une
+                        entreprise
                         spécialisée dans
                         le développement de solutions à hydrogène (groupes électrogènes notamment). Située à
                         <strong>Belfort</strong>,
-                        H2SYS propose différents groupes électrogènes à hydrogène ainsi que des bancs didactiques et des
+                        H2SYS propose différents groupes électrogènes à hydrogène ainsi que des bancs didactiques et
+                        des
                         piles à combustible.
                     </p>
                     <p>
-                        L'entreprise a été fondée en 2017 et comptait 9 employés. Les effectifs ont augmentés jusqu'à
-                        atteindre 30 collaborateurs en 2021, puis l'effectif a baissé pour atteindre 12 collaborateurs
+                        L'entreprise a été fondée en 2017 et comptait 9 employés. Les effectifs ont augmentés
+                        jusqu'à
+                        atteindre 30 collaborateurs en 2021, puis l'effectif a baissé pour atteindre 12
+                        collaborateurs
                         en 2025.
                     </p>
                     <p>
@@ -28,7 +32,8 @@ import { default } from '../elements/BeforeAfter.vue';
                     </p>
                     <ul>
                         <li>
-                            L'ancienne IHM a été développée en React Js par un collaborateur ayant quitté l'entreprise,
+                            L'ancienne IHM a été développée en React Js par un collaborateur ayant quitté
+                            l'entreprise,
                             cette personne étant la seule personne dans l'entreprise familière avec React Js.
                         </li>
                         <li>
@@ -36,7 +41,8 @@ import { default } from '../elements/BeforeAfter.vue';
                             disposition de se dédier entièrement au développement d'une nouvelle IHM.
                         </li>
                         <li>
-                            Il n'y a pas assez de tâches pour justifier l'emploi d'un nouveau collaborateur en CDI pour
+                            Il n'y a pas assez de tâches pour justifier l'emploi d'un nouveau collaborateur en CDI
+                            pour
                             la mission du développement de l'IHM en Python NiceGUI, justifiant plutôt un stagiaire.
                         </li>
                     </ul>
@@ -62,10 +68,13 @@ import { default } from '../elements/BeforeAfter.vue';
 
                 <div class="col-12 col-md-6">
                     <p class="mb-4">
-                        Le but du stage était de concevoir une nouvelle Interface Homme-Machine (IHM) Web pour remplacer
+                        Le but du stage était de concevoir une nouvelle Interface Homme-Machine (IHM) Web pour
+                        remplacer
                         une
-                        version obsolète pour le système Mothys. Le Mothys est un banc didactique composé d'une pile à
-                        combustible, d'une batterie et de ports permettant de brancher une source externe de puissance
+                        version obsolète pour le système Mothys. Le Mothys est un banc didactique composé d'une pile
+                        à
+                        combustible, d'une batterie et de ports permettant de brancher une source externe de
+                        puissance
                         et une charge.
                         Le Raspberry Pi héberge l'IHM, qui est accessible via wifi depuis n'importe quel appareil.
                         Le Raspberry communique en Controller Area Network (CAN) avec les différents composants du
@@ -125,10 +134,13 @@ import { default } from '../elements/BeforeAfter.vue';
             <div class="row">
                 <div class="col-12 col-md-6">
                     <p class="mb-4">
-                        L’IHM développée en <strong>Python avec NiceGUI</strong> remplace une ancienne application React
-                        obsolète pour le banc didactique <strong>Mothys</strong> d’H2SYS. Cette IHM responsive permet de
+                        L’IHM développée en <strong>Python avec NiceGUI</strong> remplace une ancienne application
+                        React
+                        obsolète pour le banc didactique <strong>Mothys</strong> d’H2SYS. Cette IHM responsive
+                        permet de
                         piloter
-                        et superviser en temps réel un système d’hybridation énergétique à base de pile à combustible
+                        et superviser en temps réel un système d’hybridation énergétique à base de pile à
+                        combustible
                         hydrogène,
                         batterie, panneau solaire ou autre source externe.
                     </p>
@@ -160,14 +172,16 @@ import { default } from '../elements/BeforeAfter.vue';
                 </li>
                 <li>Dialogue manuel intégré (nouveau)</li>
                 <li>Authentification multi-rôle avec permissions différenciées</li>
-                <li>Paramètres configurables : gestion utilisateurs, langues (français, anglais, allemand, espagnol),
+                <li>Paramètres configurables : gestion utilisateurs, langues (français, anglais, allemand,
+                    espagnol),
                     wifi, logs, date</li>
                 <li>Mise à jour logicielle cryptée via fichier ou clé USB</li>
                 <li>Mode démo activable via mot de passe (rôle commercial)</li>
             </ul>
 
             <p class="mb-4">
-                Deux rôles administrateur cachés permettent à H2SYS et aux commerciaux d’avoir un accès privilégié pour
+                Deux rôles administrateur cachés permettent à H2SYS et aux commerciaux d’avoir un accès privilégié
+                pour
                 les démonstrations ou la maintenance. Ces rôles ne sont pas visibles par les utilisateurs standards.
             </p>
 
@@ -178,14 +192,16 @@ import { default } from '../elements/BeforeAfter.vue';
             <h3>Structure de l'application</h3>
 
             <p class="mb-4">
-                Afin de structurer proprement le code de l’IHM et de garantir la clarté et la maintenabilité du projet,
+                Afin de structurer proprement le code de l’IHM et de garantir la clarté et la maintenabilité du
+                projet,
                 j’ai fait le choix d’une <strong>approche orientée objet</strong> pour organiser les données et les
                 fonctionnalités métier.
             </p>
 
             <p class="mb-4">
                 Les différentes parties de l’application, comme la gestion du <strong>bus CAN</strong>, des
-                <strong>logs</strong>, des <strong>utilisateurs</strong> ou encore des <strong>licences</strong>, sont
+                <strong>logs</strong>, des <strong>utilisateurs</strong> ou encore des <strong>licences</strong>,
+                sont
                 chacune encapsulées dans des <strong>services Python</strong> dédiés.
                 Ces services contiennent la logique métier, les données observables, ainsi que les fonctions de
                 traitement.
@@ -193,9 +209,11 @@ import { default } from '../elements/BeforeAfter.vue';
 
             <p class="mb-4">
                 Pour éviter d’avoir à <strong>passer explicitement les instances de services</strong> à chaque
-                constructeur de page ou de composant dans NiceGUI, j’ai utilisé un <strong>pattern Singleton</strong>
+                constructeur de page ou de composant dans NiceGUI, j’ai utilisé un <strong>pattern
+                    Singleton</strong>
                 sur la plupart des services.
-                Cela m’a permis d’avoir un accès global contrôlé à chaque service, tout en assurant une instance unique
+                Cela m’a permis d’avoir un accès global contrôlé à chaque service, tout en assurant une instance
+                unique
                 et partagée dans l’application.
             </p>
 
@@ -208,7 +226,8 @@ import { default } from '../elements/BeforeAfter.vue';
             </ul>
 
             <p>
-                Cette organisation m’a permis d’appliquer de bonnes pratiques de développement logiciel en Python, tout
+                Cette organisation m’a permis d’appliquer de bonnes pratiques de développement logiciel en Python,
+                tout
                 en m’adaptant aux contraintes spécifiques de NiceGUI, qui ne propose pas de système d’injection de
                 dépendances comme dans certains frameworks.
             </p>
@@ -229,10 +248,12 @@ import { default } from '../elements/BeforeAfter.vue';
                         </p>
 
                         <p class="mb-4 smoltext">
-                            Dans un premier temps, j’ai converti le code en <strong>Vue Konva</strong> pour l'intégrer
+                            Dans un premier temps, j’ai converti le code en <strong>Vue Konva</strong> pour
+                            l'intégrer
                             plus
                             facilement dans une structure Vue.js.
-                            Toutefois, cette version s’est révélée incompatible avec <strong>NiceGUI</strong>, notamment
+                            Toutefois, cette version s’est révélée incompatible avec <strong>NiceGUI</strong>,
+                            notamment
                             à
                             cause de
                             limitations dans l’intégration du canvas avec les composants NiceGUI.
@@ -243,7 +264,8 @@ import { default } from '../elements/BeforeAfter.vue';
                             depuis
                             le
                             dossier statique de l’application.
-                            Cette solution, bien que plus manuelle, m’a permis un contrôle total sur le comportement du
+                            Cette solution, bien que plus manuelle, m’a permis un contrôle total sur le comportement
+                            du
                             schéma et
                             une compatibilité complète avec NiceGUI.
                         </p>
@@ -252,15 +274,18 @@ import { default } from '../elements/BeforeAfter.vue';
                             Chaque composant du schéma (source, charge, batterie, pile à combustible, etc.) a été
                             <strong>modularisé
                                 en sous-éléments</strong> pour faciliter l’évolution du schéma et sa maintenabilité.
-                            J’ai également revu entièrement le design pour le rendre plus intuitif : les <strong>sources
+                            J’ai également revu entièrement le design pour le rendre plus intuitif : les
+                            <strong>sources
                                 sont
-                                positionnées à gauche</strong>, et la <strong>charge à droite</strong>, conformément au
+                                positionnées à gauche</strong>, et la <strong>charge à droite</strong>, conformément
+                            au
                             layout réel
                             du PCB.
                         </p>
 
                         <p class="mb-4 smoltext">
-                            J’ai aussi ajouté un nouveau composant graphique : le <strong>convertisseur DC/DC</strong>,
+                            J’ai aussi ajouté un nouveau composant graphique : le <strong>convertisseur
+                                DC/DC</strong>,
                             qui joue un
                             rôle
                             clé dans
@@ -430,7 +455,8 @@ import { default } from '../elements/BeforeAfter.vue';
             <h2>Compétences mobilisées</h2>
             <h3>Réaliser un développement d’application</h3>
             <p class="mb-4">
-                Durant mon stage chez <strong>H2SYS</strong>, j’ai développé une nouvelle Interface Homme-Machine (IHM)
+                Durant mon stage chez <strong>H2SYS</strong>, j’ai développé une nouvelle Interface Homme-Machine
+                (IHM)
                 Web destinée à remplacer une version obsolète.
                 Ce travail m’a permis de mettre en œuvre toutes les étapes de conception et de réalisation d’une
                 application.
@@ -446,41 +472,50 @@ import { default } from '../elements/BeforeAfter.vue';
                 <li>Déploiement sur <strong>Raspberry Pi 5</strong> dans un environnement embarqué</li>
             </ul>
             <p>
-                Ce projet a couvert l’ensemble du cycle de développement logiciel, de la définition du besoin jusqu’au
+                Ce projet a couvert l’ensemble du cycle de développement logiciel, de la définition du besoin
+                jusqu’au
                 déploiement.
             </p>
             <q-separator></q-separator>
             <h3>Optimiser des applications</h3>
             <p class="mb-4">
-                Au fil du développement, j’ai dû optimiser l’application pour répondre à des contraintes de performance
+                Au fil du développement, j’ai dû optimiser l’application pour répondre à des contraintes de
+                performance
                 et d’ergonomie, en particulier sur
                 une plateforme embarquée (Raspberry Pi 5).
             </p>
             <ul class="list-disc pl-6 mb-4">
                 <li>Optimisation du <strong>rendement graphique</strong> pour les schémas interactifs (Konva)</li>
-                <li>Réduction du <strong>temps de chargement</strong> de l’IHM grâce à un <strong>routing SPA</strong>
+                <li>Réduction du <strong>temps de chargement</strong> de l’IHM grâce à un <strong>routing
+                        SPA</strong>
                 </li>
-                <li>Utilisation efficace des <strong>threads</strong> pour éviter le blocage de l’interface pendant la
+                <li>Utilisation efficace des <strong>threads</strong> pour éviter le blocage de l’interface pendant
+                    la
                     communication CAN</li>
                 <li>Mise en cache partielle de certaines données pour éviter des rechargements inutiles</li>
                 <li>Test et validation de l’IHM en conditions réelles sur le matériel cible pour ajuster les
                     performances</li>
             </ul>
             <p>
-                Ces actions ont permis de garantir une application fluide, rapide et adaptée à un environnement matériel
+                Ces actions ont permis de garantir une application fluide, rapide et adaptée à un environnement
+                matériel
                 contraint.
             </p>
             <q-separator></q-separator>
             <h3>Collaborer au sein d’une équipe informatique</h3>
             <p class="mb-4">
-                Bien que l'équipe de développement de l'IHM soit restreinte — composée uniquement de mon maître de stage
+                Bien que l'équipe de développement de l'IHM soit restreinte — composée uniquement de mon maître de
+                stage
                 <strong>Yoann Powolny</strong> et moi-même —
-                nous avons mis en place des outils et des méthodes efficaces pour collaborer dans de bonnes conditions :
+                nous avons mis en place des outils et des méthodes efficaces pour collaborer dans de bonnes
+                conditions :
             </p>
             <ul class="list-disc pl-6 mb-4">
-                <li><strong>Git</strong> a été utilisé pour la gestion de version : travail sur des branches, commits
+                <li><strong>Git</strong> a été utilisé pour la gestion de version : travail sur des branches,
+                    commits
                     fréquents, revue de code et fusion structurée.</li>
-                <li>Un <strong>backlog</strong> clair permettait de suivre les tâches, les priorités et l’évolution du
+                <li>Un <strong>backlog</strong> clair permettait de suivre les tâches, les priorités et l’évolution
+                    du
                     projet.</li>
             </ul>
             <p>
@@ -528,11 +563,18 @@ export default {
 }
 </script>
 
+<style lang="sass">
+strong
+  color: $secondary
+</style>
+
 <style>
 img {
     padding: 10px;
     border-radius: 20px;
 }
+
+
 
 .bigImg {
     padding: 20px;
