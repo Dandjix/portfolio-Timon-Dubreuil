@@ -74,7 +74,7 @@ import { default } from '../elements/BeforeAfter.vue';
                     <img src="images/stageS6/tech/CAN_Logo.svg" alt="Controller Area Network (CAN)" width="64px"
                         class="q-pr-md">
                     <strong>Controller Area Network </strong>&nbsp; (CAN) — pour la communication avec les composants du
-                    système
+                    système Mothys
 
                 </li>
                 <li class="flex items-center gap-2">
