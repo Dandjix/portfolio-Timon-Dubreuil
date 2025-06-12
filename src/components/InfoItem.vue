@@ -2,7 +2,7 @@
   <q-item clickable style="width: fit-content;" @click="copyToClipboard()">
     <div style="display: flex; align-items: center; justify-content: center;">
       <q-icon :name="icon" class="q-pr-sm" />
-      
+
       <span>{{ value }}</span>
     </div>
   </q-item>
@@ -20,7 +20,7 @@ export default {
     copyToClipboard() {
       navigator.clipboard.writeText(this.copiedValue).then(() => {
         this.$q.notify({
-          message: `Copied ${this.name} to clipboard!`,
+          message: `${this.name} copié(e) dans le presse-papier!`,
           color: 'green',
         });
       });

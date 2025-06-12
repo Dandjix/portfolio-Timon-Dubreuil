@@ -182,46 +182,83 @@ import { default } from '../elements/BeforeAfter.vue';
 
             <q-separator></q-separator>
             <h3>Schéma interactif</h3>
-            <p class="mb-4">
-                Le schéma électrique interactif est un élément central de l'IHM du Mothys, permettant de visualiser en
-                temps réel l'état du système
-                et d’interagir avec certains composants. Ce module a été conçu à partir d’une base existante
-                initialement développée avec <strong>React Konva</strong>.
-            </p>
 
-            <p class="mb-4">
-                Dans un premier temps, j’ai converti le code en <strong>Vue Konva</strong> pour l'intégrer plus
-                facilement dans une structure Vue.js.
-                Toutefois, cette version s’est révélée incompatible avec <strong>NiceGUI</strong>, notamment à cause de
-                limitations dans l’intégration du canvas avec les composants NiceGUI.
-            </p>
+            <div class="col">
+                <div class="row" style="align-items: end; justify-content: center;">
 
-            <p class="mb-4">
-                Finalement, j’ai choisi d’intégrer <strong>Konva JavaScript directement</strong>, chargé depuis le
-                dossier statique de l’application.
-                Cette solution, bien que plus manuelle, m’a permis un contrôle total sur le comportement du schéma et
-                une compatibilité complète avec NiceGUI.
-            </p>
+                    <div class="col-12 col-md-6">
+                        <p class="mb-4 smoltext">
+                            Le schéma électrique interactif est un élément central de l'IHM du Mothys, permettant de
+                            visualiser en
+                            temps réel l'état du système
+                            et d’interagir avec certains composants. Ce module a été conçu à partir d’une base existante
+                            initialement développée avec <strong>React Konva</strong>.
+                        </p>
 
-            <p class="mb-4">
-                Chaque composant du schéma (source, charge, batterie, pile à combustible, etc.) a été <strong>modularisé
-                    en sous-éléments</strong> pour faciliter l’évolution du schéma et sa maintenabilité.
-                J’ai également revu entièrement le design pour le rendre plus intuitif : les <strong>sources sont
-                    positionnées à gauche</strong>, et la <strong>charge à droite</strong>, conformément au layout réel
-                du PCB.
-            </p>
+                        <p class="mb-4 smoltext">
+                            Dans un premier temps, j’ai converti le code en <strong>Vue Konva</strong> pour l'intégrer
+                            plus
+                            facilement dans une structure Vue.js.
+                            Toutefois, cette version s’est révélée incompatible avec <strong>NiceGUI</strong>, notamment
+                            à
+                            cause de
+                            limitations dans l’intégration du canvas avec les composants NiceGUI.
+                        </p>
 
-            <p class="mb-4">
-                J’ai aussi ajouté un nouveau composant graphique : le <strong>DCDC</strong>, qui joue un rôle clé dans
-                la gestion de la demande de puissance vers la pile à combustible.
-                Il permet de refléter dynamiquement le comportement de régulation énergétique du système dans l’IHM.
-            </p>
+                        <p class="mb-4 smoltext">
+                            Finalement, j’ai choisi d’intégrer <strong>Konva JavaScript directement</strong>, chargé
+                            depuis
+                            le
+                            dossier statique de l’application.
+                            Cette solution, bien que plus manuelle, m’a permis un contrôle total sur le comportement du
+                            schéma et
+                            une compatibilité complète avec NiceGUI.
+                        </p>
 
-            <p>
-                Ce travail m’a permis de mieux comprendre l’architecture Konva (scènes, calques, événements), de
-                manipuler des éléments graphiques de façon dynamique en JavaScript,
-                et d’intégrer proprement une visualisation complexe dans un framework Python web.
-            </p>
+                        <p class="mb-4 smoltext">
+                            Chaque composant du schéma (source, charge, batterie, pile à combustible, etc.) a été
+                            <strong>modularisé
+                                en sous-éléments</strong> pour faciliter l’évolution du schéma et sa maintenabilité.
+                            J’ai également revu entièrement le design pour le rendre plus intuitif : les <strong>sources
+                                sont
+                                positionnées à gauche</strong>, et la <strong>charge à droite</strong>, conformément au
+                            layout réel
+                            du PCB.
+                        </p>
+
+                        <p class="mb-4 smoltext">
+                            J’ai aussi ajouté un nouveau composant graphique : le <strong>DCDC</strong>, qui joue un
+                            rôle
+                            clé dans
+                            la gestion de la demande de puissance vers la pile à combustible.
+                            Il permet de refléter dynamiquement le comportement de régulation énergétique du système
+                            dans
+                            l’IHM.
+                        </p>
+
+                        <p class="smoltext">
+                            Ce travail m’a permis de mieux comprendre l’architecture Konva (scènes, calques,
+                            événements), de
+                            manipuler des éléments graphiques de façon dynamique en JavaScript,
+                            et d’intégrer proprement une visualisation complexe dans un framework Python web.
+                        </p>
+                    </div>
+                    <img src="images/stageS6/mlg/shemaorig2.jpg" alt="Ancien Schéma" class="col-12 col-md-6"
+                        style="width: 50%; height: 100%;">
+                </div>
+                <div class="row" style="align-items: start; justify-content: center;">
+
+                    <img src="images/stageS6/mlg/schema2.png" alt="Nouveau Schéma" class="col-12 col-md-6"
+                        style="width: 50%;">
+                    <img src="images/stageS6/mlg/PCB.png" alt="Printed Circuit Board (PCB) du Mothys"
+                        class="col-12 col-md-6" style="width: 50%;">
+
+                </div>
+            </div>
+
+
+
+
 
 
             <q-separator></q-separator>
@@ -229,14 +266,17 @@ import { default } from '../elements/BeforeAfter.vue';
             <h3>Graphiques en temps réel</h3>
 
             <p class="mb-4">
-                L’ancienne IHM ne permettait d’afficher qu’un seul graphique à la fois, basé sur un fichier journal. Les
+                L’ancienne IHM ne permettait d’afficher qu’un seul graphique à la fois, basé sur un fichier
+                journal. Les
                 interactions étaient limitées, et aucun affichage en direct n’était possible.
-                Pour répondre au besoin du client, j’ai conçu un système de <strong>graphique en temps réel</strong>
+                Pour répondre au besoin du client, j’ai conçu un système de <strong>graphique en temps
+                    réel</strong>
                 intégré à l’IHM, en utilisant la bibliothèque <strong>Apache ECharts</strong>.
             </p>
 
             <p class="mb-4">
-                Les données du système Mothys sont reçues en direct via le <strong>bus CAN</strong>, puis traitées dans
+                Les données du système Mothys sont reçues en direct via le <strong>bus CAN</strong>, puis
+                traitées dans
                 le backend pour être diffusées en temps réel au frontend via des WebSockets.
                 Les graphiques se mettent à jour dynamiquement avec une fréquence configurable.
             </p>
@@ -252,13 +292,17 @@ import { default } from '../elements/BeforeAfter.vue';
                 <li>Les données affichées peuvent être <strong>exportées</strong> en image ou en <strong>CSV
                         interprété</strong></li>
                 <li>Certains affichages avancés sont <strong>verrouillés via le système de licence</strong></li>
-                <li>Les performances ont été optimisées pour que les graphes restent fluides même sur <strong>Raspberry
-                        Pi 5</strong></li>
+                <li>Les performances ont été optimisées pour que les graphes restent fluides même sur
+                    <strong>Raspberry
+                        Pi 5</strong>
+                </li>
             </ul>
 
             <p>
-                Cette partie m’a permis de manipuler des flux de données en temps réel, d’optimiser le rendu graphique
-                dans un contexte contraint, et de construire une interface utilisateur claire et réactive adaptée à un
+                Cette partie m’a permis de manipuler des flux de données en temps réel, d’optimiser le rendu
+                graphique
+                dans un contexte contraint, et de construire une interface utilisateur claire et réactive
+                adaptée à un
                 usage pédagogique.
             </p>
             <q-separator></q-separator>
@@ -281,12 +325,14 @@ import { default } from '../elements/BeforeAfter.vue';
             <ul class="list-disc pl-6 mb-4 text-sm">
                 <li>Structure centralisée des chaînes de caractères dans des fichiers de traduction</li>
                 <li>Utilisation d’un système de clés pour rendre l’application facilement extensible</li>
-                <li>Création de programmes de vérification et modification des fichiers de traduction pour assurer
+                <li>Création de programmes de vérification et modification des fichiers de traduction pour
+                    assurer
                     l'intégrité des différents dictionnaires de traduction</li>
             </ul>
 
             <p>
-                Cette mise en place m’a amené à structurer proprement les composants et à anticiper les évolutions
+                Cette mise en place m’a amené à structurer proprement les composants et à anticiper les
+                évolutions
                 futures, notamment l’ajout potentiel d’autres langues ou de nouveaux contenus à traduire. La
                 traduction
                 est conçue pour être facile à maintenir par l’équipe H2SYS.
@@ -297,18 +343,22 @@ import { default } from '../elements/BeforeAfter.vue';
             <div class="row">
                 <div class="col-12 col-md-6">
                     <p class="mb-4">
-                        L'application n'a pas été testée via des outils automatisés (tests unitaires ou d'intégration).
+                        L'application n'a pas été testée via des outils automatisés (tests unitaires ou
+                        d'intégration).
                         À la
-                        place, nous avons réalisé des <strong>tests manuels complets</strong> sur le banc Mothys, en
+                        place, nous avons réalisé des <strong>tests manuels complets</strong> sur le banc
+                        Mothys, en
                         environnement réel, afin de valider l'ensemble des fonctionnalités de l'IHM.
                     </p>
 
 
                     <p class="mb-4">
-                        L’un des moments les plus critiques du stage a été la <strong>phase de test en atmosphère
+                        L’un des moments les plus critiques du stage a été la <strong>phase de test en
+                            atmosphère
                             explosive</strong>, réalisée avec une pile à combustible alimentée en
                         <strong>hydrogène</strong>.
-                        Dans ce contexte, l’application devait garantir la fiabilité de l’affichage, l’absence de bugs
+                        Dans ce contexte, l’application devait garantir la fiabilité de l’affichage, l’absence
+                        de bugs
                         bloquants, le mécanisme de demande de puissance à la pile.
                     </p>
 
@@ -323,15 +373,18 @@ import { default } from '../elements/BeforeAfter.vue';
                         <li>Visualisation en direct des trames CAN</li>
                         <li>Affichage et rafraîchissement des graphiques en temps réel</li>
                         <li>Tests de changement de langue, de mode sombre, et de permissions utilisateur</li>
-                        <li>Tests de la mise à jour logicielle et de la persistance des données après redémarrage</li>
+                        <li>Tests de la mise à jour logicielle et de la persistance des données après
+                            redémarrage</li>
                         <li>Vérification du comportement des pages restreintes par la licence</li>
                     </ul>
                 </div>
                 <img src="/images/stageS6/testsATEX.png" alt="Tests en atmosphère explosive" class="col-12 col-md-6" />
             </div>
             <p>
-                Ces tests ont été réalisés en collaboration avec mon maître de stage et les techniciens, directement sur
-                le matériel final. Ce processus m’a permis d’aborder les enjeux de sûreté, de précision et de robustesse
+                Ces tests ont été réalisés en collaboration avec mon maître de stage et les techniciens,
+                directement sur
+                le matériel final. Ce processus m’a permis d’aborder les enjeux de sûreté, de précision et de
+                robustesse
                 dans un contexte industriel réel.
             </p>
         </SectionCard>
@@ -457,5 +510,13 @@ h3 {
     font-family: 'Roboto Condensed', serif;
     margin-top: 0.75rem;
     margin-bottom: 0.5rem;
+}
+
+p {
+    text-align: justify;
+}
+
+.smoltext {
+    font-size: 0.75vw;
 }
 </style>

@@ -78,14 +78,14 @@ export default {
           icon: "phone",
           value: "+33 7 69 24 14 29",
           copiedValue: "+33769241429",
-          name: "phone number"
+          name: "numéro de téléphone"
         },
         {
           title: "email",
           icon: "email",
           value: "timondubreuil@outlook.com",
           copiedValue: "timondubreuil@outlook.com",
-          name: "email address"
+          name: "addresse email"
         },
         {
           title: "github",
