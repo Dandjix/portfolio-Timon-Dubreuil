@@ -2,14 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
           Timon Dubreuil : Portfolio
@@ -19,24 +12,14 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      style="
+    <q-drawer v-model="leftDrawerOpen" bordered style="
       display: flex;
       flex-direction: column;
-      "
-      width="350"
-    >
+      " width="350">
 
 
-    <q-timeline layout="dense" style="padding-left: 10px; padding-right: 10px;" class="text-primary" color="primary">
-        <NavigationItem
-          v-for="link in timelineSections"
-          :key="link.title"
-          v-bind="link"
-        />
+      <q-timeline layout="dense" style="padding-left: 10px; padding-right: 10px;" class="text-primary" color="primary">
+        <NavigationItem v-for="link in timelineSections" :key="link.title" v-bind="link" />
       </q-timeline>
       <!-- <q-space></q-space>
       <q-list
@@ -51,13 +34,14 @@
       <router-view />
     </q-page-container>
 
-      <q-footer elevated>
-        <q-toolbar>
-          <InfoItem v-for="item in infoSections" :key="item.title" :title="item.title" :value="item.value" :copiedValue="item.copiedValue" :icon="item.icon" :name="item.name">
+    <q-footer elevated>
+      <q-toolbar>
+        <InfoItem v-for="item in infoSections" :key="item.title" :title="item.title" :value="item.value"
+          :copiedValue="item.copiedValue" :icon="item.icon" :name="item.name">
 
-          </InfoItem>
-        </q-toolbar>
-      </q-footer>
+        </InfoItem>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -90,25 +74,25 @@ export default {
       ],
       infoSections: [
         {
-          title:"telephone",
-          icon:"phone",
-          value:"+33 7 69 24 14 29",
-          copiedValue:"+33769241429",
-          name:"phone number"
+          title: "telephone",
+          icon: "phone",
+          value: "+33 7 69 24 14 29",
+          copiedValue: "+33769241429",
+          name: "phone number"
         },
         {
-          title:"email",
-          icon:"email",
-          value:"timondubreuil@outlook.com",
-          copiedValue:"timondubreuil@outlook.com",
-          name:"email address"
+          title: "email",
+          icon: "email",
+          value: "timondubreuil@outlook.com",
+          copiedValue: "timondubreuil@outlook.com",
+          name: "email address"
         },
         {
-          title:"github",
-          icon:"fa-brands fa-github",
-          value:"https://github.com/Dandjix",
-          copiedValue:"https://github.com/Dandjix",
-          name:"github"
+          title: "github",
+          icon: "fa-brands fa-github",
+          value: "https://github.com/Dandjix",
+          copiedValue: "https://github.com/Dandjix",
+          name: "github"
         }
       ]
     }
