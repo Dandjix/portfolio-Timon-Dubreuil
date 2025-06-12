@@ -4,7 +4,7 @@
         <h4 class="text-center q-pa-none q-ma-none text-secondary"> Janvier à mai 2025</h4>
 
         <SectionCard>
-            <h2>Présentation de l'entreprise</h2>
+            <h2 id="heading_1">Présentation de l'entreprise</h2>
 
 
 
@@ -61,7 +61,7 @@
         </SectionCard>
 
         <SectionCard>
-            <h2>Sujet du stage</h2>
+            <h2 id="heading_2">Sujet du stage</h2>
             <div class="row">
                 <img src="/images/stageS6/systèmeMothysSchema.png" alt="Schéma des composants du système Mothys"
                     class="col-12 col-md-6 bigImg" style="height: 100%;" />
@@ -96,7 +96,7 @@
         </SectionCard>
 
         <SectionCard>
-            <h2>Technologies utilisées</h2>
+            <h2 id="heading_3">Technologies utilisées</h2>
             <ul class="list-none pl-0 mb-4 space-y-2 text-sm">
                 <li class="flex items-center gap-2">
                     <img src="images/stageS6/tech/nicegui_dark.png" alt="NiceGUI" width="64px" class="q-mr-md"
@@ -130,7 +130,7 @@
 
 
         <SectionCard>
-            <h2>Rôle et fonctionnalités de l'IHM</h2>
+            <h2 id="heading_4">Rôle et fonctionnalités de l'IHM</h2>
             <div class="row">
                 <div class="col-12 col-md-6">
                     <p class="mb-4">
@@ -187,7 +187,7 @@
 
         </SectionCard>
         <SectionCard>
-            <h2>Réalisation</h2>
+            <h2 id="heading_5">Réalisation</h2>
 
             <h3>Structure de l'application</h3>
 
@@ -459,7 +459,7 @@
 
 
         <SectionCard>
-            <h2>Compétences mobilisées</h2>
+            <h2 id="heading_6">Compétences mobilisées</h2>
             <h3>Réaliser un développement d’application</h3>
             <p class="mb-4">
                 Durant mon stage chez <strong>H2SYS</strong>, j’ai développé une nouvelle Interface Homme-Machine
@@ -530,7 +530,7 @@
         </SectionCard>
 
         <SectionCard max-width="750px">
-            <h2>Bilan</h2>
+            <h2 id="heading_7">Bilan</h2>
             <p>
                 Ce stage m’a permis de renforcer mes compétences en développement web, en systèmes embarqués
                 et en gestion de projet logiciel. Il m’a également donné l’opportunité de travailler sur un produit

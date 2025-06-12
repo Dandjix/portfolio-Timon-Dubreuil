@@ -1,12 +1,6 @@
 <template>
   <q-timeline-entry>
-    <q-item
-      clickable
-      @click="navigate"
-      class="q-pa-sm rounded-borders cursor-pointer"
-      color="primary"
-      v-ripple
-    >
+    <q-item clickable @click="navigate" class="q-pa-sm rounded-borders cursor-pointer" color="primary" v-ripple>
       <q-item-section avatar>
         <q-icon :name="icon" color="primary" />
       </q-item-section>
@@ -40,11 +34,10 @@ export default {
       default: ''
     }
   },
+  emits: ["navigate"],
   methods: {
-    navigate()
-    {
-      console.log("yooo");
-      
+    navigate() {
+      this.$emit("navigate")
     }
   },
   computed: {

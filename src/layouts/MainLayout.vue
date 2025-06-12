@@ -19,7 +19,8 @@
 
 
       <q-timeline layout="dense" style="padding-left: 10px; padding-right: 10px;" class="text-primary" color="primary">
-        <NavigationItem v-for="link in timelineSections" :key="link.title" v-bind="link" />
+        <NavigationItem v-for="link in timelineSections" :key="link.title" v-bind="link"
+          @navigate="navigate(link.target_id)" />
       </q-timeline>
       <!-- <q-space></q-space>
       <q-list
@@ -60,17 +61,40 @@ export default {
       leftDrawerOpen: false,
       timelineSections: [
         {
-          title: 'Stage : H2SYS - IHM du système Mothys',
-          caption: 'janvier 2025 - mai 2025',
-          icon: 'bubble_chart',
-          link: '/'
+          title: "Présentation de l'entreprise",
+          // icon: 'bubble_chart',
+          target_id: 'heading_1'
         },
         {
-          title: "SAE : S5S6 - boîtier de surveillance qualité de l'eau",
-          caption: 'janvier 2025 - mai 2025',
-          icon: 'bubble_chart',
-          link: '/'
+          title: "Sujet du stage",
+          target_id: 'heading_2'
         },
+        {
+          title: "Technologies utilisées",
+          target_id: 'heading_3'
+        },
+        {
+          title: "Rôle et fonctionnalités de l'IHM",
+          target_id: 'heading_4'
+        },
+        {
+          title: "Réalisation",
+          target_id: 'heading_5'
+        },
+        {
+          title: "Compétences mobilisées",
+          target_id: 'heading_6'
+        },
+        {
+          title: "Bilan",
+          target_id: 'heading_7'
+        },
+        // {
+        //   title: "SAE : S5S6 - boîtier de surveillance qualité de l'eau",
+        //   caption: 'janvier 2025 - mai 2025',
+        //   icon: 'bubble_chart',
+        //   link: '/'
+        // },
       ],
       infoSections: [
         {
@@ -100,7 +124,20 @@ export default {
   methods: {
     toggleLeftDrawer() {
       this.leftDrawerOpen = !this.leftDrawerOpen
+    },
+    navigate(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        const offset = 100;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth'
+        });
+      }
     }
+
   }
 }
 </script>

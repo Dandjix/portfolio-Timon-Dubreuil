@@ -24,22 +24,22 @@ export default {
     // SAE,
     StageS6
   },
-  data() {
-    return {
-      entries: [
-        {
-          title: "SAE",
-          subtitle: "Octobre 2024 - Juin 2025",
-          content: "SAE"
-        },
-        {
-          title: "Stage",
-          subtitle: "Janvier 2025 - Mai 2025",
-          content: "StageS6"
-        },
-      ]
-    }
-  }
+  // data() {
+  //   return {
+  //     entries: [
+  //       {
+  //         title: "SAE",
+  //         subtitle: "Octobre 2024 - Juin 2025",
+  //         content: "SAE"
+  //       },
+  //       {
+  //         title: "Stage",
+  //         subtitle: "Janvier 2025 - Mai 2025",
+  //         content: "StageS6"
+  //       },
+  //     ]
+  //   }
+  // }
 
 }
 </script>
