@@ -191,7 +191,7 @@ import { default } from '../elements/BeforeAfter.vue';
                             Le schéma électrique interactif est un élément central de l'IHM du Mothys, permettant de
                             visualiser en
                             temps réel l'état du système
-                            et d’interagir avec certains composants. Ce module a été conçu à partir d’une base existante
+                            et d’interagir avec les composants. Ce module a été conçu à partir d’une base existante
                             initialement développée avec <strong>React Konva</strong>.
                         </p>
 
@@ -227,7 +227,8 @@ import { default } from '../elements/BeforeAfter.vue';
                         </p>
 
                         <p class="mb-4 smoltext">
-                            J’ai aussi ajouté un nouveau composant graphique : le <strong>DCDC</strong>, qui joue un
+                            J’ai aussi ajouté un nouveau composant graphique : le <strong>convertisseur DC/DC</strong>,
+                            qui joue un
                             rôle
                             clé dans
                             la gestion de la demande de puissance vers la pile à combustible.
@@ -517,6 +518,6 @@ p {
 }
 
 .smoltext {
-    font-size: 0.75vw;
+    font-size: max(0.75vw, 9px);
 }
 </style>
