@@ -3,8 +3,8 @@ import { default } from '../elements/BeforeAfter.vue';
     <main class="p-8 max-w-4xl mx-auto text-gray-800 text-[15px]">
         <h1 class="text-3xl font-bold mb-6 text-center text-indigo-700 font-serif">Mon Stage de Fin d'Études</h1>
 
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Présentation de l'entreprise</h2>
+        <SectionCard>
+            <h2>Présentation de l'entreprise</h2>
 
 
 
@@ -21,10 +21,10 @@ import { default } from '../elements/BeforeAfter.vue';
                 <img src="/images/stageS6/produitsEntreprise.png" alt="Produits de l'entreprise"
                     class="rounded-xl shadow-md w-full mb-6 col-12 col-md-6 q-pa-md" />
             </div>
-        </section>
+        </SectionCard>
 
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Sujet du stage</h2>
+        <SectionCard>
+            <h2>Sujet du stage</h2>
             <div class="row">
                 <img src="/images/stageS6/systèmeMothysSchema.png" alt="Schéma des composants du système Mothys"
                     class="rounded-xl shadow-md w-full mb-6 col-12 col-md-6 q-pa-md" />
@@ -53,10 +53,10 @@ import { default } from '../elements/BeforeAfter.vue';
                     </ul>
                 </div>
             </div>
-        </section>
+        </SectionCard>
 
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Technologies utilisées</h2>
+        <SectionCard>
+            <h2>Technologies utilisées</h2>
             <ul class="list-none pl-0 mb-4 space-y-2 text-sm">
                 <li class="flex items-center gap-2">
                     <img src="images/stageS6/tech/nicegui.png" alt="NiceGUI" width="64px" class="q-pr-md">
@@ -82,11 +82,11 @@ import { default } from '../elements/BeforeAfter.vue';
                     <strong>Raspberry Pi 5</strong>&nbsp; — comme plateforme embarquée
                 </li>
             </ul>
-        </section>
+        </SectionCard>
 
 
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Rôle et fonctionnalités de l'IHM</h2>
+        <SectionCard>
+            <h2>Rôle et fonctionnalités de l'IHM</h2>
             <div class="row">
                 <div class="col-12 col-md-6">
                     <p class="mb-4">
@@ -130,10 +130,94 @@ import { default } from '../elements/BeforeAfter.vue';
                 Deux rôles administrateur cachés permettent à H2SYS et aux commerciaux d’avoir un accès privilégié pour
                 les démonstrations ou la maintenance. Ces rôles ne sont pas visibles par les utilisateurs standards.
             </p>
-        </section>
 
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Traduction multilingue</h2>
+        </SectionCard>
+        <SectionCard>
+            <h2>Réalisation</h2>
+
+            <h3>Schéma interactif</h3>
+            <p class="mb-4">
+                Le schéma électrique interactif est un élément central de l'IHM du Mothys, permettant de visualiser en
+                temps réel l'état du système
+                et d’interagir avec certains composants. Ce module a été conçu à partir d’une base existante
+                initialement développée avec <strong>React Konva</strong>.
+            </p>
+
+            <p class="mb-4">
+                Dans un premier temps, j’ai converti le code en <strong>Vue Konva</strong> pour l'intégrer plus
+                facilement dans une structure Vue.js.
+                Toutefois, cette version s’est révélée incompatible avec <strong>NiceGUI</strong>, notamment à cause de
+                limitations dans l’intégration du canvas avec les composants NiceGUI.
+            </p>
+
+            <p class="mb-4">
+                Finalement, j’ai choisi d’intégrer <strong>Konva JavaScript directement</strong>, chargé depuis le
+                dossier statique de l’application.
+                Cette solution, bien que plus manuelle, m’a permis un contrôle total sur le comportement du schéma et
+                une compatibilité complète avec NiceGUI.
+            </p>
+
+            <p class="mb-4">
+                Chaque composant du schéma (source, charge, batterie, pile à combustible, etc.) a été <strong>modularisé
+                    en sous-éléments</strong> pour faciliter l’évolution du schéma et sa maintenabilité.
+                J’ai également revu entièrement le design pour le rendre plus intuitif : les <strong>sources sont
+                    positionnées à gauche</strong>, et la <strong>charge à droite</strong>, conformément au layout réel
+                du PCB.
+            </p>
+
+            <p class="mb-4">
+                J’ai aussi ajouté un nouveau composant graphique : le <strong>DCDC</strong>, qui joue un rôle clé dans
+                la gestion de la demande de puissance vers la pile à combustible.
+                Il permet de refléter dynamiquement le comportement de régulation énergétique du système dans l’IHM.
+            </p>
+
+            <p>
+                Ce travail m’a permis de mieux comprendre l’architecture Konva (scènes, calques, événements), de
+                manipuler des éléments graphiques de façon dynamique en JavaScript,
+                et d’intégrer proprement une visualisation complexe dans un framework Python web.
+            </p>
+
+
+            <q-separator></q-separator>
+
+            <h3>Graphiques en temps réel</h3>
+
+            <p class="mb-4">
+                L’ancienne IHM ne permettait d’afficher qu’un seul graphique à la fois, basé sur un fichier journal. Les
+                interactions étaient limitées, et aucun affichage en direct n’était possible.
+                Pour répondre au besoin du client, j’ai conçu un système de <strong>graphique en temps réel</strong>
+                intégré à l’IHM, en utilisant la bibliothèque <strong>Apache ECharts</strong>.
+            </p>
+
+            <p class="mb-4">
+                Les données du système Mothys sont reçues en direct via le <strong>bus CAN</strong>, puis traitées dans
+                le backend pour être diffusées en temps réel au frontend via des WebSockets.
+                Les graphiques se mettent à jour dynamiquement avec une fréquence configurable.
+            </p>
+
+            <p class="mb-4">
+                Les utilisateurs peuvent visualiser simultanément jusqu’à <strong>quatre fenêtres de
+                    graphiques</strong>, chacune pouvant contenir plusieurs courbes superposées.
+                Les graphiques sont interactifs : zoom, survol, légende dynamique, affichage de valeurs.
+            </p>
+
+            <ul class="list-disc pl-6 mb-4 text-sm">
+                <li>Les courbes sont sélectionnables par composant (batterie, pile, DCDC, etc.)</li>
+                <li>Les données affichées peuvent être <strong>exportées</strong> en image ou en <strong>CSV
+                        interprété</strong></li>
+                <li>Certains affichages avancés sont <strong>verrouillés via le système de licence</strong></li>
+                <li>Les performances ont été optimisées pour que les graphes restent fluides même sur <strong>Raspberry
+                        Pi 5</strong></li>
+            </ul>
+
+            <p>
+                Cette partie m’a permis de manipuler des flux de données en temps réel, d’optimiser le rendu graphique
+                dans un contexte contraint, et de construire une interface utilisateur claire et réactive adaptée à un
+                usage pédagogique.
+            </p>
+            <q-separator></q-separator>
+
+            <h3>Traduction multilingue</h3>
             <p class="mb-4">
                 L’IHM devait être utilisable dans différents contextes pédagogiques à l’international. Une
                 fonctionnalité de <strong>traduction multilingue</strong> a donc été implémentée afin de rendre
@@ -141,8 +225,10 @@ import { default } from '../elements/BeforeAfter.vue';
             </p>
 
             <p class="mb-4">
-                Quatre langues sont actuellement prises en charge : <strong>français</strong>, <strong>anglais</strong>,
-                <strong>allemand</strong> et <strong>espagnol</strong>. L’utilisateur peut changer la langue directement
+                Quatre langues sont actuellement prises en charge : <strong>français</strong>,
+                <strong>anglais</strong>,
+                <strong>allemand</strong> et <strong>espagnol</strong>. L’utilisateur peut changer la langue
+                directement
                 depuis l’onglet <em>paramètres</em> de l’IHM.
             </p>
 
@@ -155,15 +241,17 @@ import { default } from '../elements/BeforeAfter.vue';
 
             <p>
                 Cette mise en place m’a amené à structurer proprement les composants et à anticiper les évolutions
-                futures, notamment l’ajout potentiel d’autres langues ou de nouveaux contenus à traduire. La traduction
+                futures, notamment l’ajout potentiel d’autres langues ou de nouveaux contenus à traduire. La
+                traduction
                 est conçue pour être facile à maintenir par l’équipe H2SYS.
             </p>
-        </section>
+        </SectionCard>
 
 
 
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Réaliser un développement d’application</h2>
+        <SectionCard>
+            <h2>Bilan des compétences</h2>
+            <h3>Réaliser un développement d’application</h3>
             <p class="mb-4">
                 Durant mon stage chez <strong>H2SYS</strong>, j’ai développé une nouvelle Interface Homme-Machine (IHM)
                 Web destinée à remplacer une version obsolète.
@@ -184,10 +272,8 @@ import { default } from '../elements/BeforeAfter.vue';
                 Ce projet a couvert l’ensemble du cycle de développement logiciel, de la définition du besoin jusqu’au
                 déploiement.
             </p>
-        </section>
-
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Optimiser des applications</h2>
+            <q-separator></q-separator>
+            <h3>Optimiser des applications</h3>
             <p class="mb-4">
                 Au fil du développement, j’ai dû optimiser l’application pour répondre à des contraintes de performance
                 et d’ergonomie, en particulier sur
@@ -207,12 +293,8 @@ import { default } from '../elements/BeforeAfter.vue';
                 Ces actions ont permis de garantir une application fluide, rapide et adaptée à un environnement matériel
                 contraint.
             </p>
-        </section>
-
-
-
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Collaborer au sein d’une équipe informatique</h2>
+            <q-separator></q-separator>
+            <h3>Collaborer au sein d’une équipe informatique</h3>
             <p class="mb-4">
                 Bien que l'équipe de développement de l'IHM soit restreinte — composée uniquement de mon maître de stage
                 <strong>Yoann Powolny</strong> et moi-même —
@@ -229,25 +311,27 @@ import { default } from '../elements/BeforeAfter.vue';
                 planification agile
                 et communication technique au sein d'une équipe, même réduite.
             </p>
-        </section>
+        </SectionCard>
 
-        <section class="mb-10">
-            <h2 class="text-xl font-semibold mb-2 text-indigo-600">Bilan</h2>
+        <SectionCard>
+            <h2>Bilan</h2>
             <p>
                 Ce stage m’a permis de renforcer mes compétences en développement web, en systèmes embarqués
                 et en gestion de projet logiciel. Il m’a également donné l’opportunité de travailler sur un produit
                 utilisé en conditions réelles.
             </p>
-        </section>
+        </SectionCard>
     </main>
 </template>
 
 <script>
 import BeforeAfter from 'src/components/elements/BeforeAfter.vue'
+import SectionCard from 'src/components/elements/SectionCard.vue'
 
 export default {
     components: {
-        BeforeAfter
+        BeforeAfter,
+        SectionCard
     }
 }
 </script>
@@ -261,7 +345,10 @@ main {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: 'Roboto Condensed', serif;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 </style>
