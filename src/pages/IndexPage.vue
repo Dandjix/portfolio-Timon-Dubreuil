@@ -35,7 +35,7 @@
           {
             title:"Stage",
             subtitle:"Janvier 2025 - Mai 2025",
-            content : "stageS6"
+            content : "StageS6"
           },
         ]
       }
