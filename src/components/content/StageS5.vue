@@ -1,6 +1,6 @@
 <template>
     <main class="p-8 max-w-4xl mx-auto text-gray-800 text-[15px]">
-        <h1 class="text-center">Stage de S6 - H2SYS</h1>
+        <h1 class="text-center">Stage de S5 - H2SYS</h1>
         <h4 class="text-center q-pa-none q-ma-none text-secondary"> Janvier à mai 2025</h4>
 
         <SectionCard>
@@ -55,7 +55,7 @@
 
 
 
-                <img src="/images/stageS6/produitsEntreprise.png" alt="Produits de l'entreprise"
+                <img src="/images/StageS5/produitsEntreprise.png" alt="Produits de l'entreprise"
                     class="col-12 col-md-6 bigImg" style="height: 100%;" />
             </div>
         </SectionCard>
@@ -63,7 +63,7 @@
         <SectionCard>
             <h2 id="heading_2">Sujet du stage</h2>
             <div class="row">
-                <img src="/images/stageS6/systèmeMothysSchema.png" alt="Schéma des composants du système Mothys"
+                <img src="/images/StageS5/systèmeMothysSchema.png" alt="Schéma des composants du système Mothys"
                     class="col-12 col-md-6 bigImg" style="height: 100%;" />
 
                 <div class="col-12 col-md-6">
@@ -99,22 +99,22 @@
             <h2 id="heading_3">Technologies utilisées</h2>
             <ul class="list-none pl-0 mb-4 space-y-2 text-sm">
                 <li class="flex items-center gap-2">
-                    <img src="images/stageS6/tech/nicegui_dark.png" alt="NiceGUI" width="64px" class="q-mr-md"
+                    <img src="images/StageS5/tech/nicegui_dark.png" alt="NiceGUI" width="64px" class="q-mr-md"
                         v-if="isDark" />
-                    <img src="images/stageS6/tech/nicegui_light.png" alt="NiceGUI" width="64px" class="q-mr-md"
+                    <img src="images/StageS5/tech/nicegui_light.png" alt="NiceGUI" width="64px" class="q-mr-md"
                         v-else />
                     <strong>NiceGUI</strong>&nbsp; — pour le développement de l'IHM en Python
                 </li>
                 <li class="flex items-center gap-2">
-                    <img src="images/stageS6/tech/konva.png" alt="Konva" width="64px" class="q-mr-md" />
+                    <img src="images/StageS5/tech/konva.png" alt="Konva" width="64px" class="q-mr-md" />
                     <strong>Konva </strong>&nbsp; — pour le schéma électrique interactif
                 </li>
                 <li class="flex items-center gap-2">
-                    <img src="images/stageS6/tech/echarts.png" alt="Apache Echarts" width="64px" class="q-mr-md" />
+                    <img src="images/StageS5/tech/echarts.png" alt="Apache Echarts" width="64px" class="q-mr-md" />
                     <strong>Apache ECharts</strong>&nbsp; — pour les graphiques en temps réel
                 </li>
                 <li class="flex items-center gap-2">
-                    <img src="images/stageS6/tech/CAN_Logo.svg" alt="Controller Area Network (CAN)" width="64px"
+                    <img src="images/StageS5/tech/CAN_Logo.svg" alt="Controller Area Network (CAN)" width="64px"
                         class="q-mr-md" />
                     <strong>Controller Area Network </strong>&nbsp; (CAN) — pour la communication avec les
                     composants du
@@ -122,7 +122,7 @@
 
                 </li>
                 <li class="flex items-center gap-2">
-                    <img src="images/stageS6/tech/raspberry-pi.png" alt="NiceGUI" width="64px" imgClass="q-mr-md" />
+                    <img src="images/StageS5/tech/raspberry-pi.png" alt="NiceGUI" width="64px" imgClass="q-mr-md" />
                     <strong>Raspberry Pi 5</strong>&nbsp; — comme plateforme embarquée
                 </li>
             </ul>
@@ -152,23 +152,23 @@
             <ul class="list-disc pl-6 mb-4 text-sm">
                 <li>
                     Schéma interactif du système (contrôle et surveillance de chaque composant)
-                    <BeforeAfter before="/images/stageS6/pageSchemaAvant.jpg"
-                        after="/images/stageS6/pageSchemaAprès.png" />
+                    <BeforeAfter before="/images/StageS5/pageSchemaAvant.jpg"
+                        after="/images/StageS5/pageSchemaAprès.png" />
                 </li>
                 <li>Tableau filtré de trames CAN reçues en direct
-                    <BeforeAfter before="/images/stageS6/busViewerAvant.jpg"
-                        after="/images/stageS6/busViewerAprès.png" />
+                    <BeforeAfter before="/images/StageS5/busViewerAvant.jpg"
+                        after="/images/StageS5/busViewerAprès.png" />
                 </li>
                 <li>Lecture des variables système triées par sous-systèmes</li>
                 <li>Visualisation et gestion des fichiers de logs CAN</li>
                 <li>Graphiques en temps réel avec export CSV/image
-                    <BeforeAfter before="/images/stageS6/pageGraphiquesAvant.jpg"
-                        after="/images/stageS6/pageGraphiquesAprès.png" />
+                    <BeforeAfter before="/images/StageS5/pageGraphiquesAvant.jpg"
+                        after="/images/StageS5/pageGraphiquesAprès.png" />
 
                 </li>
                 <li>Système de licences verrouillant certaines fonctionnalités</li>
                 <li>Page d’alertes et notifications
-                    <BeforeAfter before="/images/stageS6/alertesAvant.jpg" after="/images/stageS6/alertesAprès.png" />
+                    <BeforeAfter before="/images/StageS5/alertesAvant.jpg" after="/images/StageS5/alertesAprès.png" />
                 </li>
                 <li>Dialogue manuel intégré (nouveau)</li>
                 <li>Authentification multi-rôle avec permissions différenciées</li>
@@ -302,14 +302,14 @@
                             et d’intégrer proprement une visualisation complexe dans un framework Python web.
                         </p>
                     </div>
-                    <LegendedImg src="images/stageS6/mlg/shemaorig2.jpg" alt="Ancien Schéma" imgClass="col-12 col-md-6"
+                    <LegendedImg src="images/StageS5/mlg/shemaorig2.jpg" alt="Ancien Schéma" imgClass="col-12 col-md-6"
                         style="width: 50%; height: 100%;" />
                 </div>
                 <div class="row" style="align-items: start; justify-content: center;">
 
-                    <LegendedImg src="images/stageS6/mlg/schema2.png" alt="Nouveau Schéma" imgClass="col-12 col-md-6"
+                    <LegendedImg src="images/StageS5/mlg/schema2.png" alt="Nouveau Schéma" imgClass="col-12 col-md-6"
                         style="width: 50%;" />
-                    <LegendedImg src="images/stageS6/mlg/PCB.png" alt="Printed Circuit Board (PCB) du Mothys"
+                    <LegendedImg src="images/StageS5/mlg/PCB.png" alt="Printed Circuit Board (PCB) du Mothys"
                         imgClass="col-12 col-md-6" style="width: 50%;" />
 
                 </div>
@@ -361,7 +361,7 @@
 
 
                 </div>
-                <img src="images/stageS6/pageGraphiquesAprès.png" alt="Page des graphiques finale"
+                <img src="images/StageS5/pageGraphiquesAprès.png" alt="Page des graphiques finale"
                     class="col-12 col-md-6" style="height: 100%;">
             </div>
             <p>
@@ -444,7 +444,7 @@
                         <li>Vérification du comportement des pages restreintes par la licence</li>
                     </ul>
                 </div>
-                <img src="/images/stageS6/testsATEX.png" alt="Tests en atmosphère explosive"
+                <img src="/images/StageS5/testsATEX.png" alt="Tests en atmosphère explosive"
                     class="col-12 col-md-6 bigImg" style="height: 100%;" />
             </div>
             <p>

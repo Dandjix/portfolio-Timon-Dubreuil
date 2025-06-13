@@ -1,4 +1,4 @@
-import { default } from '../content/StageS6.vue';
+import { default } from '../content/StageS5.vue';
 <template>
     <div class="full-width" style="display: flex; justify-content: center; align-items: center;">
         <q-card class="q-pa-md q-my-lg sectionCard" :style="`max-width:${maxWidth};`">
