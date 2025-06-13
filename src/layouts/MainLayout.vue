@@ -37,10 +37,11 @@
 
     <q-footer elevated>
       <q-toolbar>
-        <InfoItem v-for="item in infoSections" :key="item.title" :title="item.title" :value="item.value"
-          :copiedValue="item.copiedValue" :icon="item.icon" :name="item.name">
-
-        </InfoItem>
+        <div class="row">
+          <InfoItem v-for="item in infoSections" :key="item.title" :title="item.title" :value="item.value"
+            :copiedValue="item.copiedValue" :icon="item.icon" :name="item.name">
+          </InfoItem>
+        </div>
       </q-toolbar>
     </q-footer>
   </q-layout>
