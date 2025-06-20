@@ -172,12 +172,6 @@
                 <li>Mode démo activable via mot de passe (rôle commercial)</li>
             </ul>
 
-            <p class="mb-4">
-                Deux rôles administrateur cachés permettent à H2SYS et aux commerciaux d’avoir un accès privilégié
-                pour
-                les démonstrations ou la maintenance. Ces rôles ne sont pas visibles par les utilisateurs standards.
-            </p>
-
         </SectionCard>
         <SectionCard>
             <h2 id="heading_5">Réalisation</h2>
