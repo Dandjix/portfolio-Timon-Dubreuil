@@ -1,6 +1,6 @@
 # Portfolio Timon Dubreuil (portfolio-timon-dubreuil)
 
-Porte le folio
+Site portfolio de moi-même Timon Dubreuil, détaillant mon stage de troisième année de BUT informatique dans l'entreprise H2SYS.
 
 ## Install the dependencies
 ```bash

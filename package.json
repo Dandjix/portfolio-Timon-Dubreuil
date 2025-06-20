@@ -1,7 +1,7 @@
 {
   "name": "portfolio-timon-dubreuil",
   "version": "0.0.1",
-  "description": "Porte le folio",
+  "description": "Site portfolio de moi-même Timon Dubreuil, détaillant mon stage de troisième année de BUT informatique dans l'entreprise H2SYS.",
   "productName": "Portfolio Timon Dubreuil",
   "author": "Timon Dubreuil <timondubreuil@outlook.com>",
   "type": "module",
