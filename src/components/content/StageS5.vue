@@ -1,6 +1,6 @@
 <template>
     <main class="p-8 max-w-4xl mx-auto text-gray-800 text-[15px]">
-        <h1 class="text-center">Stage de S5 - H2SYS</h1>
+        <h1 class="text-center">Stage de S6 - H2SYS</h1>
         <h4 class="text-center q-pa-none q-ma-none text-secondary"> Janvier à mai 2025</h4>
 
         <SectionCard>
