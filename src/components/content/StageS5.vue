@@ -21,13 +21,6 @@
                         piles à combustible.
                     </p>
                     <p>
-                        L'entreprise a été fondée en 2017 et comptait 9 employés. Les effectifs ont augmentés
-                        jusqu'à
-                        atteindre 30 collaborateurs en 2021, puis l'effectif a baissé pour atteindre 12
-                        collaborateurs
-                        en 2025.
-                    </p>
-                    <p>
                         Ce stage était particulièrement adapté pour les raisons suivantes :
                     </p>
                     <ul>
